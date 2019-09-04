@@ -17,7 +17,7 @@
 
 set -e
 
-mongod --smallfiles --bind_ip_all &
+mongod --smallfiles --ipv6 --bind_ip=0.0.0.0,:: &
 
 while true; do
   mongo /edgex/mongo/config/init_mongo.js && break
